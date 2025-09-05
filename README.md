@@ -9,8 +9,31 @@ Termina de escribir la implementación del algoritmo QuickSort (recuerda que en 
 ## Ejercicio 2.
 Escribe una implementación diferente para el algoritmo QuickSort en el que el pivote es el promedio de los valores ingresados (incluso si éste no pertenece a la lista).
 
-Restricción: 
-En el arreglo de salida solamente pueden aparecer los valores que estaban en el arreglo original de entrada.
+### Restricciones: 
+1. El pivote se calcula como el promedio (tipo double) de los elementos entre los índices bajo y alto.
+2. El pivote no se inserta en el arreglo; únicamente se usa para decidir cómo partir el arreglo.
+3. Se debe definir una convención de partición clara. Ejemplo sugerido:
+  -A la izquierda: todos los elementos < pivote.
+  -A la derecha: todos los elementos ≥ pivote.
+
+4. El algoritmo debe funcionar incluso si el promedio no es un número entero.
+5. El algoritmo debe garantizar progreso (evitar ciclos infinitos), por ejemplo, asegurando que siempre haya movimiento de índices en la partición.
+
+ ### Casos borde a considerar
+1. Todos los elementos iguales.
+   - El promedio = valor común.
+   - La convención >= pivote debe garantizar que el arreglo no quede atascado en recursión infinita.
+
+2. Varios elementos repetidos.
+   - Si hay valores repetidos alrededor del pivote, verifica que la partición no pierda elementos.
+
+3. Arreglo muy pequeño.
+   - Para subarreglos de tamaño 0 o 1 (bajo >= alto), se debe cortar la recursión inmediatamente.
+
+4. Promedio con decimales.
+   - Ejemplo: subarreglo `[2, 5, 9]`.
+   - Promedio = 16 / 3 = 5.33.
+   - Convención: < 5.33 a la izquierda (2, 5), >= 5.33 a la derecha (9).
 
 ## Ejercicio 3. El problema del papá tacaño.
 Una familia está de viaje en una ciudad nueva. Cada día del viaje, observan las opciones de lugares que hay por visitar para planear su itinerario. El papá tacaño, en lugar de ver lo atractivo de las opciones, ve el costo que les tomará llegar a cada uno de dichos lugares. No queriendo ser injusto con su familia, les propone el lugar cuyo costo se aproxima a la media de los costos en total. 
