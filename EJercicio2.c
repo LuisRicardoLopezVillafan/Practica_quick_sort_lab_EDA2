@@ -45,7 +45,6 @@ double calcular_promedio_segmento(int arr[], int bajo, int alto) {
 */
 int particion_por_promedio(int arr[], int bajo, int alto, double pivote) {
     // Escribe aquí tu función
-    // Puedes implementar un esquema tipo Hoare o Lomuto pero guiado por pivot double.
     // Recuerda: NO escribas 'pivote' dentro del arreglo; solo compáralo contra arr[i].
     return -1; // placeholder
 }
